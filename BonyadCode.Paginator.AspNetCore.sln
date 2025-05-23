@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BonyadCode.Paginator.AspNetCore", "BonyadCode.Paginator.AspNetCore\BonyadCode.Paginator.AspNetCore.csproj", "{975FBFC9-9305-44B6-82FD-700DCF139211}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{975FBFC9-9305-44B6-82FD-700DCF139211}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{975FBFC9-9305-44B6-82FD-700DCF139211}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{975FBFC9-9305-44B6-82FD-700DCF139211}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{975FBFC9-9305-44B6-82FD-700DCF139211}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
