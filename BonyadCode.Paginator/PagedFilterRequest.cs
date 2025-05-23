@@ -1,4 +1,4 @@
-﻿namespace BonyadCode.Paginator.AspNetCore;
+﻿namespace BonyadCode.Paginator;
 
 public record PagedFilterRequest : PagedRequest
 {
