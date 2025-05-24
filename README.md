@@ -1,4 +1,4 @@
-# BonyadCode.Paginator
+# BonyadCode.Paginator.AspNetCore
 
 A minimal yet powerful pagination utility for .NET developers. Enables easy paging over `IQueryable<T>` or `IEnumerable<T>` sources with optional dynamic ordering via expressions or property names — ideal for APIs, dashboards, and any list-heavy UIs.
 
@@ -17,7 +17,7 @@ A minimal yet powerful pagination utility for .NET developers. Enables easy pagi
 ## 📦 Installation
 
 ```bash
-dotnet add package BonyadCode.Paginator
+dotnet add package BonyadCode.Paginator.AspNetCore
 ```
 
 ---
@@ -32,6 +32,20 @@ var request = new PagedRequest
     PageNumber = 2,
     PageSize = 10,
     OrderBy = "CreatedAt",
+    AscendingOrder = true
+};
+
+var result = await dbContext.Users
+    .Where(u => u.IsActive)
+    .ToPagedResponseAsync(request, cancellationToken: cancellationToken);
+```
+or
+```csharp
+var request = new PagedRequest
+{
+    PageNumber = 2,
+    PageSize = 10,
+    OrderBy = nameof(Request.CreatedAt),
     AscendingOrder = true
 };
 
@@ -134,7 +148,7 @@ var result = await dbContext.Products
 
 ## 🤝 Contributing
 
-Contributions, suggestions, and PRs are welcome! [GitHub →](https://github.com/bonyadcode/Paginator)
+Contributions, suggestions, and PRs are welcome! [GitHub →](https://github.com/bonyadcode/Paginator.AspNetCore)
 
 ## 📄 License
 
