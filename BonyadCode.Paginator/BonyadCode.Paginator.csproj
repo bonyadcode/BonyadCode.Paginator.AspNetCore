@@ -4,8 +4,31 @@
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+
+        <!-- NuGet Info -->
+        <IsPackable>true</IsPackable>
+        <PackageId>BonyadCode.Paginator.AspNetCore</PackageId>
+        <Version>1.0.0</Version>
+        <Authors>Mojtaba Hosseini</Authors>
+        <Company>BonyadCode</Company>
+        <Description>A set of utilities that enables easy pagination over IQueryable or IEnumerable sources with optional dynamic ordering via expressions or property names — ideal for APIs, dashboards, and any list-heavy UIs.</Description>
+        <PackageTags>Paginator;Pagination;IEnumerable;IQueryable;API;Web;</PackageTags>
+        <RepositoryUrl>https://github.com/bonyadcode/Paginator.AspNetCore</RepositoryUrl>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
+
+        <!-- Source link -->
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     </PropertyGroup>
 
+    <ItemGroup>
+        <None Include="..\README.md" Pack="true" PackagePath="" />
+        <None Include="..\LICENSE" Pack="true" PackagePath="" />
+    </ItemGroup>
+    
     <ItemGroup>
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.5" />
     </ItemGroup>
