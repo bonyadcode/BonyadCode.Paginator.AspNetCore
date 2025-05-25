@@ -18,7 +18,7 @@ public class PageBuilder<T>
     internal PageBuilder(uint itemCount, uint pageNumber, uint pageSize, IList<T> items)
     {
         ItemCount = itemCount;
-        PageCount = (uint)Math.Ceiling(itemCount / (double)pageSize);
+        PageCount = Math.Max(1, (uint)Math.Ceiling(itemCount / (double)pageSize));
         PageNumber = pageNumber;
         PageSize = pageSize;
         Items = items;

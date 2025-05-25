@@ -8,7 +8,7 @@ namespace BonyadCode.Paginator;
 public static class PageBuilderExtensions
 {
     public static Task<PageBuilder<T>> ToPagedResponseAsync<T>(
-        this IQueryable<T> source,
+        this IQueryable<T>? source,
         PagedRequest? request = null,
         Expression<Func<T, object>>? expressionFunction = null,
         CancellationToken cancellationToken = default)
@@ -27,7 +27,7 @@ public static class PageBuilderExtensions
     }
 
     public static PageBuilder<T> ToPagedResponse<T>(
-        this IEnumerable<T> source,
+        this IEnumerable<T>? source,
         PagedRequest? request = null,
         Expression<Func<T, object>>? expressionFunction = null,
         CancellationToken cancellationToken = default)
@@ -46,7 +46,7 @@ public static class PageBuilderExtensions
     }
 
     private static async Task<PageBuilder<T>> CreateAsync<T>(
-        IQueryable<T> source,
+        IQueryable<T>? source,
         uint pageNumber,
         uint pageSize,
         bool? ascendingOrder = null,
@@ -54,7 +54,9 @@ public static class PageBuilderExtensions
         Expression<Func<T, object>>? expressionFunction = null,
         CancellationToken cancellationToken = default)
     {
-        ArgumentNullException.ThrowIfNull(source);
+        if (source == null)
+            return new PageBuilder<T>(0, 1, pageSize, []);
+        
         if (pageSize == 0)
             throw new ArgumentOutOfRangeException(nameof(pageSize), "Page size must be greater than zero.");
 
@@ -66,7 +68,7 @@ public static class PageBuilderExtensions
     }
 
     private static PageBuilder<T> Create<T>(
-        IEnumerable<T> source,
+        IEnumerable<T>? source,
         uint pageNumber,
         uint pageSize,
         bool? ascendingOrder = null,
@@ -74,7 +76,9 @@ public static class PageBuilderExtensions
         Expression<Func<T, object>>? expressionFunction = null,
         CancellationToken cancellationToken = default)
     {
-        ArgumentNullException.ThrowIfNull(source);
+        if (source == null)
+            return new PageBuilder<T>(0, 1, pageSize, []);
+        
         if (pageSize == 0)
             throw new ArgumentOutOfRangeException(nameof(pageSize), "Page size must be greater than zero.");
 
