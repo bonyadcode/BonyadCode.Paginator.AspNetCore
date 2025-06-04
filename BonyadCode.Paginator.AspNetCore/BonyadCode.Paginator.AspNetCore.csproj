@@ -1,23 +1,27 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
+        <!-- Target multiple .NET versions -->
+        <TargetFramework>net9.0</TargetFramework>
         <TargetFramework>net8.0</TargetFramework>
+
+        <!-- Enable implicit usings and nullable reference types -->
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
 
-        <!-- NuGet Info -->
+        <!-- NuGet package metadata -->
         <IsPackable>true</IsPackable>
         <PackageId>BonyadCode.Paginator.AspNetCore</PackageId>
-        <Version>1.0.4</Version>
+        <Version>1.0.5</Version>
         <Authors>Mojtaba Hosseini</Authors>
         <Company>BonyadCode</Company>
         <Description>A set of utilities that enables easy pagination over IQueryable or IEnumerable sources with optional dynamic ordering via expressions or property names — ideal for APIs, dashboards, and any list-heavy UIs.</Description>
         <PackageTags>Paginator;Pagination;IEnumerable;IQueryable;API;Web;</PackageTags>
-        <RepositoryUrl>https://github.com/bonyadcode/Paginator.AspNetCore</RepositoryUrl>
+        <RepositoryUrl>https://github.com/bonyadcode/BonyadCode.Paginator.AspNetCore</RepositoryUrl>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
 
-        <!-- Source link -->
+        <!-- Enable source link and symbols for debugging -->
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
         <IncludeSymbols>true</IncludeSymbols>
@@ -25,12 +29,16 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <!-- Reference ASP.NET Core shared framework -->
+        <FrameworkReference Include="Microsoft.AspNetCore.App" />
+        <!-- Include README and LICENSE files in the NuGet package -->
         <None Include="..\README.md" Pack="true" PackagePath="" />
         <None Include="..\LICENSE" Pack="true" PackagePath="" />
     </ItemGroup>
-    
+
     <ItemGroup>
-      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
+        <!-- NuGet package dependencies -->
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
     </ItemGroup>
 
 </Project>
